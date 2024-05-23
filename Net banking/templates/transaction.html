@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/style7.css') }}">
+    <title>Transaction</title>
+</head>
+<body align="center">
+<h1 align="left" >Customer Details:</h1>
+<h3 align="left" >Username: {{ name }}</h3>
+<h3 align="left" >Account Number: {{ number }}</h3>
+<h3 align="left" >Balance: Rs. {{ balance }}</h3>
+
+<div class="login-box">
+    <h1>Transactions</h1>
+    <br>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul class=flashes>
+        {% for message in messages %}
+            <p><strong><mark>{{ message }}</mark></strong></p>
+        {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+    <center>
+     <form action="transactions" method="post">
+        <div class="textbox">
+            <label for="amount" class="label1"><h2>Amount: Rs.</h2> </label>
+            <input type="number" name="amount" value="" required placeholder="Enter Amount" autocomplete="off">
+        </div>
+        <br>
+        <div class="label">
+        <label class="radio-inline  ">
+          <input type="radio"  value='withdraw' name="option"><b>Withdraw</b>
+        </label>
+        <br><br>
+        <label class="radio-inline  ">
+          <input type="radio" value='deposit' name="option"><b>Deposit</b>
+        </label>
+      </div>
+        <br>
+        <input class="btn" type="submit" value="Proceed" >
+     </form>
+    <center>
+</div>
+</body>
+</html>

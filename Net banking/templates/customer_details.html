@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/style4.css') }}">
+    <title>Employee's Corner</title>
+</head>
+<body align="center">
+    <div class='img' >
+    </div>
+
+	<div class="login-box">
+		<h1>Welcome {{ name }}</h1>
+        <h3 >Which one You are?</h3>
+        <form action="new-customer">
+            <input class="btn" type="submit" value="New Customer">
+        </form>
+        <br>
+        <form action="existing-customer">
+            <input class="btn" type="submit" value="Existing Customer">
+        </form>
+	</div>
+</body>
+</html>
